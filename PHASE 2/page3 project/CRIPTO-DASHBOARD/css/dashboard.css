@@ -102,3 +102,71 @@ continuous rotation.
         transform: rotate(360deg);
     }
 }
+
+/*
+==================================
+DARK MODE THEME
+==================================
+
+Jab body ke andar dark-mode class
+add hogi tab ye styles apply honge.
+*/
+
+body.dark-mode {
+
+    background-color: #121212;
+
+    color: white;
+}
+
+/*
+==================================
+CARD DARK MODE
+==================================
+
+Coin card ko dark theme me
+readable banayega.
+*/
+
+body.dark-mode .card {
+
+    background-color: #1e1e1e;
+
+    color: white;
+}
+
+/*
+==================================
+SEARCH BOX DARK MODE
+==================================
+
+Search input bhi dark theme
+follow karega.
+*/
+
+body.dark-mode #search {
+
+    background-color: #2a2a2a;
+
+    color: white;
+
+    border: 1px solid #444;
+}
+
+/*
+==================================
+BUTTON DARK MODE
+==================================
+
+Toggle button aur future buttons
+dark mode me better dikhenge.
+*/
+
+body.dark-mode button {
+
+    background-color: #333;
+
+    color: white;
+
+    border: 1px solid #555;
+}
