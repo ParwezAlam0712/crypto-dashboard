@@ -632,7 +632,7 @@ async function renderMarketWidgets() {
 /*
   Search Event
 */
-search.addEventListener("keypress", async (event) => {
+/*search.addEventListener("keypress", async (event) => {
 
     if (event.key === "Enter") {
 
@@ -832,3 +832,62 @@ function loadTradingView() {
     });
 
 }
+
+search.addEventListener(
+    "input",
+    async () => {
+
+        const value =
+            search.value.toLowerCase();
+
+        if (value.length < 2) {
+
+            searchResults.innerHTML = "";
+            return;
+        }
+
+        const coins =
+            await fetchMarketCoins();
+
+        const filtered =
+            coins.filter(
+                coin =>
+                    coin.name
+                        .toLowerCase()
+                        .includes(value)
+            );
+
+        searchResults.innerHTML =
+            filtered
+                .slice(0, 5)
+                .map(
+                    coin => `
+          <div
+            class="search-item"
+            data-id="${coin.id}"
+          >
+            ${coin.name} (${coin.symbol.toUpperCase()})
+          </div>
+        `
+                )
+                .join("");
+
+        document
+            .querySelectorAll(".search-item")
+            .forEach(item => {
+
+                item.addEventListener(
+                    "click",
+                    () => {
+
+                        loadCoin(
+                            item.dataset.id
+                        );
+
+                        searchResults.innerHTML = "";
+                        search.value = "";
+                    }
+                );
+            });
+    }
+);

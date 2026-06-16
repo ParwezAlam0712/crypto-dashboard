@@ -436,3 +436,47 @@ Portfolio card styling.
 .top-coin strong{
     color:#4db8ff;
 }
+
+#searchResults {
+    list-style: none;
+    margin-top: 8px;
+    padding: 0;
+    background: #1b2740;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#searchResults li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #2e3f5c;
+}
+
+#searchResults li:hover {
+    background: #2a3a56;
+}
+
+.search-results{
+  position:absolute;
+  top:60px;
+  left:0;
+  width:100%;
+  background:#1a2742;
+  border-radius:10px;
+  overflow:hidden;
+  z-index:1000;
+  box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.search-item{
+  padding:10px;
+  cursor:pointer;
+}
+
+.search-item:hover{
+  background:#24365d;
+}
+
+.topbar{
+  position:relative;
+}
