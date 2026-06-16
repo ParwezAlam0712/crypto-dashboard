@@ -1,3 +1,5 @@
+const topCoins = document.getElementById("topCoins");
+
 /*
 ==================================
 ISSE KYA HOGA ?
@@ -207,6 +209,29 @@ function renderFavorites() {
 
         });
 
+}
+
+
+async function renderTopCoins() {
+
+    const coins =
+        await fetchMarketCoins();
+
+    topCoins.innerHTML =
+        coins
+            .slice(0, 5)
+            .map(
+                coin => `
+            <div class="top-coin">
+
+                <span>${coin.name}</span>
+
+                <span>$${coin.current_price}</span>
+
+            </div>
+        `
+            )
+            .join("");
 }
 /*
 ==================================
@@ -541,6 +566,7 @@ LOAD DASHBOARD DATA
 
 renderMarketStats();
 loadTradingView();
+renderTopCoins();
 /*
 ==================================
 DARK MODE TOGGLE + SAVE
