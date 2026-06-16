@@ -403,3 +403,12 @@ Portfolio card styling.
     margin: 20px auto;
     display: block;
 }
+
+.top-coin{
+    display:flex;
+    justify-content:space-between;
+    padding:10px;
+    margin:8px 0;
+    background:#1b2940;
+    border-radius:8px;
+}
