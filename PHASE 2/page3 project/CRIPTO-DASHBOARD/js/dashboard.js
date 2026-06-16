@@ -233,6 +233,54 @@ async function renderTopCoins() {
             )
             .join("");
 }
+
+async function renderMarketMovers() {
+
+    const coins =
+        await fetchMarketCoins();
+
+    const gainers =
+        [...coins]
+            .sort(
+                (a, b) =>
+                    b.price_change_percentage_24h -
+                    a.price_change_percentage_24h
+            )
+            .slice(0, 5);
+
+    const losers =
+        [...coins]
+            .sort(
+                (a, b) =>
+                    a.price_change_percentage_24h -
+                    b.price_change_percentage_24h
+            )
+            .slice(0, 5);
+
+    gainersList.innerHTML =
+        gainers
+            .map(
+                coin => `
+            <li>
+                🟢 ${coin.symbol.toUpperCase()}
+                (${coin.price_change_percentage_24h.toFixed(2)}%)
+            </li>
+        `
+            )
+            .join("");
+
+    losersList.innerHTML =
+        losers
+            .map(
+                coin => `
+            <li>
+                🔴 ${coin.symbol.toUpperCase()}
+                (${coin.price_change_percentage_24h.toFixed(2)}%)
+            </li>
+        `
+            )
+            .join("");
+}
 /*
 ==================================
 LIVE MARKET STATS
@@ -567,6 +615,7 @@ LOAD DASHBOARD DATA
 renderMarketStats();
 loadTradingView();
 renderTopCoins();
+renderMarketMovers();
 /*
 ==================================
 DARK MODE TOGGLE + SAVE
