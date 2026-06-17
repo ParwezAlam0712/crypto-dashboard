@@ -355,3 +355,14 @@ button {
     color: #ef4444;
     font-weight: bold;
 }
+
+#newsContainer{
+    display:grid;
+    gap:15px;
+}
+
+#newsContainer .card{
+    background:#1e293b;
+    padding:15px;
+    border-radius:12px;
+}
