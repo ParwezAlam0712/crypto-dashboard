@@ -188,3 +188,38 @@ button {
     color: white;
     cursor: pointer;
 }
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dark-mode {
+    background: #050816;
+    color: white;
+}
+
+.dark-mode .header {
+    background: #0f172a;
+}
+
+.dark-mode .sidebar {
+    background: #0f172a;
+}
+
+.dark-mode .card,
+.dark-mode .market-card,
+.dark-mode .news-card,
+.dark-mode .chart-placeholder {
+    background: #1e293b;
+}
+
+.dark-mode input {
+    background: #1e293b;
+    color: white;
+}
+
+.dark-mode button{
+    background:#2563eb;
+    color:white;
+    border:none;
+}
