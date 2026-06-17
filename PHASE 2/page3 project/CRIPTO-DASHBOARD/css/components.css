@@ -270,3 +270,11 @@ button {
     border-radius: 8px;
     cursor: pointer;
 }
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 18px;
+}
