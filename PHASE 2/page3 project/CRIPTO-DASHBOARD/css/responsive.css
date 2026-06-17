@@ -39,3 +39,17 @@
     }
 
 }
+
+/* WATCHLIST MOBILE */
+
+@media (max-width: 768px) {
+
+    .add-coin {
+        flex-direction: column;
+    }
+
+    .add-coin button {
+        width: 100%;
+    }
+
+}

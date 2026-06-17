@@ -37,3 +37,44 @@ button {
     padding: 20px;
     border-radius: 12px;
 }
+
+/* WATCHLIST PAGE */
+
+.watchlist-section {
+    margin-top: 20px;
+}
+
+.add-coin {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-coin input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #1e293b;
+    color: white;
+}
+
+.add-coin button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #38bdf8;
+    color: white;
+}
+
+#watchlist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#watchlist li {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 10px;
+}
