@@ -1,27 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CryptoDash Pro</title>
 
-  <link rel="stylesheet" href="css/dashboard.css">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>News - CryptoDash Pro</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
 </head>
 
 <body>
 
-  <header>
-    <h1>CryptoDash Pro</h1>
+  <header class="header">
+
+    <div class="logo">
+      🚀 CryptoDash Pro
+    </div>
+
+    <div class="header-actions">
+
+      <button id="themeToggle">
+        🌙 Dark Mode
+      </button>
+
+      <button id="notificationBtn">
+        🔔 Notifications
+      </button>
+
+    </div>
+
   </header>
 
-  <main>
-    <h2>Page Name Here</h2>
+  <button class="menu-toggle">
+    ☰
+  </button>
+
+  <aside class="sidebar">
+
+    <nav>
+
+      <ul>
+
+        <li><a href="index.html">Dashboard</a></li>
+
+        <li><a href="watchlist.html">Watchlist</a></li>
+
+        <li><a href="portfolio.html">Portfolio</a></li>
+
+        <li><a href="market.html">Markets</a></li>
+
+        <li><a href="news.html">News</a></li>
+
+      </ul>
+
+    </nav>
+
+  </aside>
+
+  <main class="main-content">
+
+    <h1>📰 Crypto News</h1>
+
+    <section class="news-section">
+
+      <div class="news-card">
+
+        <h3>Bitcoin Hits New High</h3>
+
+        <p>
+          Bitcoin continues to gain momentum
+          as institutional adoption grows.
+        </p>
+
+      </div>
+
+      <div class="news-card">
+
+        <h3>Ethereum Upgrade Update</h3>
+
+        <p>
+          Ethereum developers announced
+          the next major network upgrade.
+        </p>
+
+      </div>
+
+      <div class="news-card">
+
+        <h3>Crypto Market Outlook</h3>
+
+        <p>
+          Analysts expect increased volatility
+          in the coming weeks.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
 
   <footer class="footer">
+
     <p>© 2026 CryptoDash Pro</p>
+
     <p>Built by Parwez Alam</p>
+
   </footer>
 
+  <script src="js/news.js"></script>
+
 </body>
+
 </html>
