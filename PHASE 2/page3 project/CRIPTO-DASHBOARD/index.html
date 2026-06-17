@@ -1,82 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>CryptoDash Pro</title>
-
-  <!--
-    Dashboard CSS
-
-    Is file me pura dashboard
-    design hoga.
-    -->
-
-  <link rel="stylesheet" href="css/dashboard.css">
-
-</head>
-<!-- Chart.js Library -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script type="module" src="js/dashboard.js"></script>
-
 <body>
 
-  <!--
-    ==================================
-    SIDEBAR
-    ==================================
+  <!-- Header -->
+  <header class="header">
 
-    Left side navigation panel.
+    <div class="logo">
+      🚀 CryptoDash Pro
+    </div>
 
-    Future:
-    Watchlist
-    Portfolio
-    News
-    Converter
-    -->
+    <div class="header-actions">
 
+      <button id="themeToggle">
+        🌙 Dark Mode
+      </button>
+
+      <button id="notificationBtn">
+        🔔 Notifications
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- Mobile Menu Button -->
+  <button class="menu-toggle">
+    ☰
+  </button>
+
+  <!-- Sidebar -->
   <aside class="sidebar">
-
-    <h2>🚀 CryptoDash Pro</h2>
 
     <nav>
 
       <ul>
 
-        <li>
-          <a href="index.html">
-            Dashboard
-          </a>
-        </li>
+        <li><a href="index.html">Dashboard</a></li>
 
-        <li>
-          <a href="watchlist.html">
-            Watchlist
-          </a>
-        </li>
+        <li><a href="watchlist.html">Watchlist</a></li>
 
-        <li>
-          <a href="portfolio.html">
-            Portfolio
-          </a>
-        </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
 
-        <li>
-          <a href="markets.html">
-            Markets
-          </a>
-        </li>
+        <li><a href="market.html">Markets</a></li>
 
-        <li>
-          <a href="news.html">
-            News
-          </a>
-        </li>
+        <li><a href="news.html">News</a></li>
 
       </ul>
 
@@ -84,227 +49,15 @@
 
   </aside>
 
-  <!--
-    ==================================
-    MAIN CONTENT
-    ==================================
-    -->
+  <!-- Main Content -->
+  <main class="main-content">
 
-  <main class="main-content" id="dashboardSection">
+    <h1>Dashboard</h1>
 
-    <!--
-        TOP NAVBAR
-
-        Search
-        Theme Toggle
-        Notifications
-        -->
-
-    <header class="topbar">
-
-      <input type="text" id="search" placeholder="Search Bitcoin, Ethereum..." />
-
-      <div id="searchResults" class="search-results"></div>
-
-      <ul id="searchResults"></ul>
-
-      <button id="themeToggle">
-
-        🌙 Dark Mode
-
-      </button>
-
-      <button id="notificationBtn">
-        🔔 Notifications
-      </button>
-
-    </header>
-
-    <!--
-==================================
-LIVE MARKET STATS
-==================================
-
-ISSE KYA HOGA ?
-
-Future me API se live
-market data yahin show hoga.
--->
-
-    <section class="stats">
-
-      <div class="stat-card">
-        <h4>Market Cap</h4>
-        <p id="marketCap" class="skeleton">Loading...</p>
-      </div>
-
-      <div class="stat-card">
-
-        <h4>24h Volume</h4>
-
-        <p id="volume" class="skeleton">
-          Loading...
-        </p>
-
-      </div>
-
-      <div class="stat-card">
-
-        <h4>BTC Dominance</h4>
-
-        <p id="btcDominance" class="skeleton">
-          Loading...
-        </p>
-
-      </div>
-
-      <div class="stat-card">
-
-        <h4>Fear & Greed</h4>
-
-        <p id="fearGreed" class="skeleton">
-          Loading...
-        </p>
-
-      </div>
-
-    </section>
-    <!--
-        ==================================
-        MAIN CHART SECTION
-        ==================================
-
-        Current chart
-        yahan render hoga.
-        -->
-
-   
-    <section id="results"></section>
-
-    <section class="chart-section">
-      <div id="tradingview_chart"></div>
-    </section>
-
-    <!-- YAHAN ADD KARNA HAI -->
-
-    <section class="news-section" id="newsSection">
-      <h2>📰 Crypto News</h2>
-
-      <div id="newsContainer">
-        Loading News...
-      </div>
-    </section>
+    <p>
+      Dashboard content will come here.
+    </p>
 
   </main>
 
-  <!--
-    ==================================
-    RIGHT PANEL
-    ==================================
-
-    Future:
-    Top Coins
-    Top News
-    Converter
-    -->
-
-  <aside class="right-panel">
-
-    <h3 id="watchlist">🔥 Watchlist</h3>
-
-    <ul id="favList"></ul>
-
-    <h3>🪙 Top Coins</h3>
-
-    <div id="topCoins"></div>
-
-    <h3>📈 Top Movers</h3>
-
-    <ul id="gainersList"></ul>
-
-    <ul id="losersList"></ul>
-
-    <!--
-==================================
-PORTFOLIO SECTION
-==================================
-
-ISSE KYA HOGA ?
-
-User apni holdings enter karega.
-
-Future me pie chart aur
-portfolio value calculate karenge.
--->
-
-    <h3>💼 Portfolio</h3>
-
-    <div class="portfolio-box" id="portfolioSection">
-
-      <input type="number" id="btcQty" placeholder="BTC Quantity">
-
-      <input type="number" id="ethQty" placeholder="ETH Quantity">
-
-      <button id="savePortfolio">
-
-        Save Portfolio
-
-      </button>
-
-      <button id="resetPortfolio">
-        Reset Portfolio
-      </button>
-
-      <p id="portfolioValue">
-        Total Value: $0
-      </p>
-
-      <div class="alert-box">
-        <h4>🔔 Price Alert</h4>
-
-        <input type="text" id="alertCoin" placeholder="bitcoin">
-
-        <input type="number" id="alertPrice" placeholder="Target Price">
-
-        <button id="setAlertBtn">
-          Set Alert
-        </button>
-      </div>
-
-      <canvas id="portfolioChart"></canvas>
-
-      <canvas id="portfolioChart"></canvas>
-
-    </div>
-
-  </aside>
-
-  <!--
-    Loader
-
-    API loading spinner
-    -->
-
-  <div id="loader" class="loader hidden">
-
-  </div>
-
-  <!--
-    Dashboard Logic
-    -->
-  <div id="notificationPanel" class="notification-panel">
-    <h3>Notifications</h3>
-    <ul id="notificationList"></ul>
-  </div>
-  <script type="module" src="js/dashboard.js"> </script>
-  <script src="https://s3.tradingview.com/tv.js"></script>
-  <div id="toast"></div>
-
-  <footer class="footer">
-    <p>© 2026 CryptoDash Pro</p>
-    <p>Built by Parwez Alam</p>
-  </footer>
-
 </body>
-
-</html>
