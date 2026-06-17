@@ -675,4 +675,19 @@ html {
         width: 100% !important;
         overflow-x: auto !important;
     }
+
+    .topbar {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    #themeToggle,
+    #notificationBtn {
+        flex: 1;
+    }
+
+    #search {
+        width: 100% !important;
+    }
 }
