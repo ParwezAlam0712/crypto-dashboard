@@ -690,4 +690,22 @@ html {
     #search {
         width: 100% !important;
     }
+
+    .footer {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #0b132b;
+    color: #a0aec0;
+    margin-top: 30px;
+    border-top: 1px solid #1f2937;
+}
+
+.footer p {
+    margin: 5px 0;
 }
