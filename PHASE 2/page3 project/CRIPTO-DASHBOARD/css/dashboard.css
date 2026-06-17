@@ -503,6 +503,7 @@ Portfolio card styling.
     }
 
 }
+
 #toast {
     position: fixed;
     top: 20px;
@@ -526,4 +527,53 @@ Portfolio card styling.
 
 #toast.show {
     opacity: 1;
+}
+
+.notification-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 300px;
+
+    background: #1e293b;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    display: none;
+
+    z-index: 1000;
+}
+
+.notification-panel.show {
+    display: block;
+}
+
+.alert-box {
+    margin-top: 15px;
+    padding: 12px;
+    background: #16213e;
+    border-radius: 10px;
+}
+
+.alert-box h4 {
+    margin-bottom: 10px;
+}
+
+.alert-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+}
+
+.alert-box button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }

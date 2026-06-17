@@ -143,6 +143,10 @@ function renderCoin(data) {
             showToast(
                 "❤️ Added To Favorites"
             );
+
+            addNotification(
+                `${data.name} added to favorites`
+            );
         });
 }
 
@@ -769,11 +773,14 @@ savePortfolioBtn.addEventListener(
     async () => {
 
         savePortfolio();
-
         await calculatePortfolioValue();
 
         showToast(
             "✅ Portfolio Saved"
+        );
+
+        addNotification(
+            "Portfolio Saved"
         );
     }
 );
@@ -934,5 +941,125 @@ setInterval(() => {
     renderTopCoins();
 
     renderMarketMovers();
+    
+    checkAlerts();
 
 }, 60000);
+
+function addNotification(message) {
+
+    const list =
+        document.getElementById(
+            "notificationList"
+        );
+
+    const item =
+        document.createElement("li");
+
+    item.textContent = message;
+
+    list.prepend(item);
+}
+
+const notificationBtn =
+    document.getElementById(
+        "notificationBtn"
+    );
+
+const notificationPanel =
+    document.getElementById(
+        "notificationPanel"
+    );
+
+notificationBtn.addEventListener(
+    "click",
+    () => {
+
+        notificationPanel.classList.toggle(
+            "show"
+        );
+
+    }
+);
+
+const alertCoin =
+  document.getElementById("alertCoin");
+
+const alertPrice =
+  document.getElementById("alertPrice");
+
+const setAlertBtn =
+  document.getElementById("setAlertBtn");
+
+let alerts =
+  JSON.parse(
+    localStorage.getItem("alerts")
+  ) || [];
+
+setAlertBtn?.addEventListener(
+  "click",
+  () => {
+
+    const coin =
+      alertCoin.value.trim().toLowerCase();
+
+    const price =
+      Number(alertPrice.value);
+
+    if (!coin || !price) {
+      showToast("Enter coin and price");
+      return;
+    }
+
+    alerts.push({
+      coin,
+      price
+    });
+
+    localStorage.setItem(
+      "alerts",
+      JSON.stringify(alerts)
+    );
+
+    showToast(
+      `Alert set for ${coin}`
+    );
+
+    alertCoin.value = "";
+    alertPrice.value = "";
+  }
+);
+
+async function checkAlerts() {
+
+  const alerts =
+    JSON.parse(
+      localStorage.getItem("alerts")
+    ) || [];
+
+  for (const alert of alerts) {
+
+    try {
+
+      const coin =
+        await fetchCoin(alert.coin);
+
+      const currentPrice =
+        coin.market_data.current_price.usd;
+
+      if (
+        currentPrice >= alert.price
+      ) {
+
+        showToast(
+          `${alert.coin} crossed $${alert.price}`
+        );
+
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+checkAlerts();

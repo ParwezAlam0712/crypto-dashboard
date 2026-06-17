@@ -98,6 +98,10 @@
 
       </button>
 
+      <button id="notificationBtn">
+        🔔 Notifications
+      </button>
+
     </header>
 
     <!--
@@ -246,6 +250,24 @@ portfolio value calculate karenge.
 
       </p>
 
+      <p id="portfolioValue">
+        Total Value: $0
+      </p>
+
+      <div class="alert-box">
+        <h4>🔔 Price Alert</h4>
+
+        <input type="text" id="alertCoin" placeholder="bitcoin">
+
+        <input type="number" id="alertPrice" placeholder="Target Price">
+
+        <button id="setAlertBtn">
+          Set Alert
+        </button>
+      </div>
+
+      <canvas id="portfolioChart"></canvas>
+
       <canvas id="portfolioChart"></canvas>
 
     </div>
@@ -265,10 +287,14 @@ portfolio value calculate karenge.
   <!--
     Dashboard Logic
     -->
-
+  <div id="notificationPanel" class="notification-panel">
+    <h3>Notifications</h3>
+    <ul id="notificationList"></ul>
+  </div>
   <script type="module" src="../js/dashboard.js"> </script>
   <script src="https://s3.tradingview.com/tv.js"></script>
   <div id="toast"></div>
+
 </body>
 
 </html>
