@@ -53,3 +53,15 @@
     }
 
 }
+
+/* =========================
+   PORTFOLIO MOBILE
+========================= */
+
+@media(max-width:768px) {
+
+    .portfolio-buttons {
+        flex-direction: column;
+    }
+
+}

@@ -1,21 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CryptoDash Pro</title>
+  <title>Portfolio - CryptoDash Pro</title>
 
-  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-  <header>
-    <h1>CryptoDash Pro</h1>
+  <!-- Header -->
+  <header class="header">
+
+    <div class="logo">
+      🚀 CryptoDash Pro
+    </div>
+
+    <div class="header-actions">
+
+      <button id="themeToggle">
+        🌙 Dark Mode
+      </button>
+
+      <button id="notificationBtn">
+        🔔 Notifications
+      </button>
+
+    </div>
+
   </header>
 
-  <main>
-    <h2>Page Name Here</h2>
+  <!-- Mobile Menu -->
+  <button class="menu-toggle">
+    ☰
+  </button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <nav>
+
+      <ul>
+
+        <li><a href="index.html">Dashboard</a></li>
+
+        <li><a href="watchlist.html">Watchlist</a></li>
+
+        <li><a href="portfolio.html">Portfolio</a></li>
+
+        <li><a href="market.html">Markets</a></li>
+
+        <li><a href="news.html">News</a></li>
+
+      </ul>
+
+    </nav>
+
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <h1>💼 Portfolio</h1>
+
+    <section class="portfolio-section">
+
+      <input type="number" id="btcQty" placeholder="BTC Quantity">
+
+      <input type="number" id="ethQty" placeholder="ETH Quantity">
+
+      <div class="portfolio-buttons">
+
+        <button id="savePortfolio">
+          Save Portfolio
+        </button>
+
+        <button id="resetPortfolio">
+          Reset Portfolio
+        </button>
+
+      </div>
+
+      <h3 id="portfolioValue">
+        Total Value: $0
+      </h3>
+
+      <div class="chart-placeholder">
+        Portfolio Chart
+      </div>
+
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -23,5 +103,8 @@
     <p>Built by Parwez Alam</p>
   </footer>
 
+  <script src="js/portfolio.js"></script>
+
 </body>
+
 </html>
